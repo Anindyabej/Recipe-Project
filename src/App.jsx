@@ -1,0 +1,21 @@
+import React from "react";
+import Navbar from "./components/Navbar";
+import { Route, Routes } from "react-router";
+import NotFound from "./pages/NotFound";
+import RecipeDetail from "./pages/RecipeDetail";
+import Home from "./pages/Home";
+
+function App() {
+  return (
+    <div className="min-h-screen bg-background text-text font-sans">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/recipe/:id" element={<RecipeDetail/>} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
